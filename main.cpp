@@ -20,12 +20,14 @@ int main() {
     int userRow;
     int numuserguesses = 0; //how many times the user has guessed a location
     bool guess = false; // if the user's guess is true or not
+
     vector<int> first(3, rows);
     vector<vector<int>> matrix{ //creating the battleship field
             {1 , 1, 1},
             {1, 1, 1},
             {1, 1, 1}
     };
+
 
 cout << "This is the game board:" << endl;
     for (int i = 0; i < matrix.size(); i++) { //printing the original 3x3 matrix
@@ -36,6 +38,7 @@ cout << "This is the game board:" << endl;
     }
     cout << endl;
 
+
     //calculating random placement on the board
     srand(time(0));
     randomCol = rand() % 3 + 1;
@@ -44,12 +47,15 @@ cout << "This is the game board:" << endl;
     while (guess == false){ //allowing the game to continue as long as the user does not guess the correct location
 
 
+
     cout << "Where do you think the battleship is? Enter two numbers (row then column)" << endl;
     cin >> userCol; //allowing the user to guess which column
     cin >> userRow; //allowing the user to guess which row
 
     userCol = userCol - 1;//The matrices are in vectors from 0 to 2 so this keeps the numbers the same
     userRow = userRow - 1;
+
+
     if (userCol == randomCol) { //using a loop to see if the user's guess matches the randomly generated answers
         if (userRow == randomRow) {
             matrix[userCol][userRow] = 2;
@@ -57,20 +63,27 @@ cout << "This is the game board:" << endl;
         }
     }
 
+
     cout << endl;
     cout << "Updated play board: (2 means you've selected the correct spot!)" << endl;
-    for (int i = 0; i < matrix.size(); i++) { //printing the new 3x3 matrix
+    for (int i = 0; i < matrix.size(); i++) { //printing the new 3x3 matrix since it was updated
         for (int j = 0; j < matrix[i].size(); j++) {
             cout << matrix[i][j];
         }
         cout << endl;
     }
+
     cout << endl;
       numuserguesses = numuserguesses + 1;
-}
+      //increasing the number of guesses to be outputted at the end
 
+} //end of while loop
+
+//this section outputs after the user guesses correctly
   cout << "Number of user guesses during game: ";
     cout << numuserguesses << endl;
+    //showing the user how many times they guessed before finishing the program
 
+    
     return 0;
 }
