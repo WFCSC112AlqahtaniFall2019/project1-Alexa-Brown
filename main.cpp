@@ -21,14 +21,13 @@ int main() {
     int numuserguesses = 0; //how many times the user has guessed a location
     bool guess = false; // if the user's guess is true or not
     vector<int> first(3, rows);
-    vector<vector<int>> matrix{
-            {1, 1, 1},
+    vector<vector<int>> matrix{ //creating the battleship field
+            {1 , 1, 1},
             {1, 1, 1},
             {1, 1, 1}
     };
-    // vector<vector<int>> matrix(3,first ); //creating the battleship field
 
-
+cout << "This is the game board:" << endl;
     for (int i = 0; i < matrix.size(); i++) { //printing the original 3x3 matrix
         for (int j = 0; j < matrix[i].size(); j++) {
             cout << matrix[i][j];
@@ -45,7 +44,7 @@ int main() {
     while (guess == false){ //allowing the game to continue as long as the user does not guess the correct location
 
 
-    cout << "Where do you think the location is? Enter two numbers (row then column)" << endl;
+    cout << "Where do you think the battleship is? Enter two numbers (row then column)" << endl;
     cin >> userCol; //allowing the user to guess which column
     cin >> userRow; //allowing the user to guess which row
 
