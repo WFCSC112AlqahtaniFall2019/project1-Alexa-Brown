@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#include <ctime>
+#include <time.h>
 #include <cstdlib>
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
      randomRow = rand() % 3 + 1;
 
 
-     cout << "Where do you think the location is? Enter two numbers (row and column)"<< endl;
+     cout << "Where do you think the location is? Enter two numbers (column and row)"<< endl;
      cin >> userCol;
      cin >> userRow;
      if (userCol == randomCol){
