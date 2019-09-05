@@ -1,5 +1,9 @@
 
-//Alexa Brown, Project 1, CSC 112, due 9/12/19
+/*Alexa Brown,
+ * Project 1
+ * CSC 112
+ * due 9/12/19
+ * */
 
 #include <iostream>
 #include <vector>
@@ -41,7 +45,7 @@ int main() {
     while (guess == false){ //allowing the game to continue as long as the user does not guess the correct location
 
 
-    cout << "Where do you think the location is? Enter two numbers (column and row)" << endl;
+    cout << "Where do you think the location is? Enter two numbers (row then column)" << endl;
     cin >> userCol; //allowing the user to guess which column
     cin >> userRow; //allowing the user to guess which row
 
@@ -55,7 +59,7 @@ int main() {
     }
 
     cout << endl;
-    cout << "Updated play board: " << endl;
+    cout << "Updated play board: (2 means you've selected the correct spot!)" << endl;
     for (int i = 0; i < matrix.size(); i++) { //printing the new 3x3 matrix
         for (int j = 0; j < matrix[i].size(); j++) {
             cout << matrix[i][j];
