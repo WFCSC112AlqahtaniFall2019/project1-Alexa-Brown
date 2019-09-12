@@ -3,6 +3,7 @@
  * Project 1
  * CSC 112
  * due 9/12/19
+ * Using vectors and loops to create a mini game of battleship
  * */
 
 #include <iostream>
@@ -48,13 +49,13 @@ cout << "This is the game board:" << endl;
 
 
 
-    cout << "Where do you think the battleship is? Enter two numbers (row then column)" << endl;
+    cout << "Where do you think the battleship is? Enter two numbers between 1 and 3 (row then column)" << endl;
     cin >> userCol; //allowing the user to guess which column
     cin >> userRow; //allowing the user to guess which row
 
     if (userCol > 3 || userCol < 0 || userRow > 3 || userRow < 0){
         cout << "Please start over and enter a guess within the range." << endl;
-        break;
+        break; //if a user's guess is out of the range, they will have to start over the game
     }
 
 
@@ -92,10 +93,10 @@ cout << "This is the game board:" << endl;
 } //end of while loop
 
 //this section outputs after the user guesses correctly
-  cout << "Number of user guesses during game: ";
-    cout << numuserguesses << endl;
-    //showing the user how many times they guessed before finishing the program
 
+        cout << "Number of user guesses during game: ";
+        cout << numuserguesses << endl;
+        //showing the user how many times they guessed before finishing the program
 
     return 0;
 }
